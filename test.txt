@@ -1,15 +1,21 @@
-file transfer:
+1/file transfer:
 rsync -rPz [src_path] [remote_address]:[destin_path]
 
-ssh:
+2/ssh:
 ssh [remote_address]
 
-sudo chmod a+rw /dev/ttyUSB0
+3/sudo chmod a+rw /dev/ttyUSB0
 
-apt update:
+4/apt update:
 sudo apt-get install [software_name]
 
-package_create:
+5/package_create:
 catkin_make
 
+6/joystick:
+follow http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick
 
+launch joystick file: 
+roslaunch turtlebot_teleop logitech.launch --screen
+launch keyboard file:
+roslaunch turtlebot_teleop keyboard_teleop.launch
