@@ -4,8 +4,12 @@ rsync -rPz [src_path] [remote_address]:[destin_path]
 ssh:
 ssh [remote_address]
 
-chmod:
-sudo chmod a+rw /dev/ttyUSB
+sudo chmod a+rw /dev/ttyUSB0
 
-update:
+apt update:
+sudo apt-get install [software_name]
+
+package_create:
+catkin_make
+
 
