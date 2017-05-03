@@ -1,21 +1,27 @@
 1/file transfer:
-rsync -rPz [src_path] [remote_address]:[destin_path]
 
-ex: rsync -rPz /ros/indigo/catkin_ws/src/rbx1 turtlebot@192.168.0.100:/ros/indigo/catkin_ws/src/rbx1
+    rsync -rPz [src_path] [remote_address]:[destin_path]
+
+    ex: rsync -rPz /ros/indigo/catkin_ws/src/rbx1 turtlebot@192.168.0.100:/ros/indigo/catkin_ws/src/rbx1
 
 2/ssh: remote access
-ssh [remote_address]
+
+    ssh [remote_address]
 
 3/permission granting: 
-sudo chmod a+rw /dev/ttyUSB0
+
+    sudo chmod a+rw /dev/ttyUSB0
 
 4/apt update:
-sudo apt-get install [software_name]
+
+    sudo apt-get install [software_name]
 
 5/package_create:
-catkin_make
+
+    catkin_make
 
 6/joystick configuration:
+
     ref http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick
 
     $ sudo apt-get install ros-indigo-joy                   (download joystick package)
@@ -29,31 +35,38 @@ catkin_make
     $ roslaunch turtlebot_teleop keyboard_teleop.launch     (launch keyboard config)
 
 7/arm configuration:
+
     ref: http://edu.gaitech.hk/turtlebot/turtlebot-arm-pincher.html
 
-    a/ download: java (for dynamixel), dynamixel, arduino 1.0.6, 
-       package: turtlebot_arm (https://github.com/turtlebot/turtlebot_arm)
-                arbotix_ros (https://github.com/vanadiumlabs/arbotix_ros)
-
-    b/ install: 
-        - java
-        - arduino 
-        - sketchbook
-        - plug the arm
-        - load ros
+    a/ install file to download: 
+        - java (for dynamixel)
         - dynamixel
-        - id each servo 
+        - arduino 1.0.6, 
+
+       package to download: 
+        - turtlebot_arm (https://github.com/turtlebot/turtlebot_arm)
+        - arbotix_ros (https://github.com/vanadiumlabs/arbotix_ros)
+        - sketchbook (https://github.com/trossenrobotics/arbotix/archive/master.zip)
+
+    b/ implementation step: 
+        - install java
+        - install arduino 
+        - replace default sketchbook
+        - plug the arm on computer
+        - check on Arduino (Board: Arbotix, Serial port: usb0, Programmer: AVRISP MKII)
+        - load ros from sketchbook on the board
+        - use dynamixel set id for each servo
 
     c/ ros:
-        $ sudo apt-get install ros-hydro-arbotix    (download package)
-        $ sudo chmod 777 /dev/ttyUSB0               (grant permission for ttyUSB0)
-        $ arbotix_terminal                          (open arbotix terminal)
-        $ ls                                        (list servo ids)
+        - $ sudo apt-get install ros-hydro-arbotix                        (download package)
+        - $ sudo chmod 777 /dev/ttyUSB0                                   (grant permission for ttyUSB0)
+        - $ arbotix_terminal                                              (open arbotix terminal)
+        - $ ls                                                            (list servo ids)
 
-        copy launch file on gaitech and modify the "yaml"        
+        - copy launch file on gaitech and modify the "yaml"        
         
-        $ roslaunch turtlebot_arm_bringup turtlebot_arm_bringup.launch  (launch servo config file)
-        $ arbotix_gui                                                   (open servo controller)
+        - $ roslaunch turtlebot_arm_bringup turtlebot_arm_bringup.launch  (launch servo config file)
+        - $ arbotix_gui                                                   (open servo controller)
         
 8/gmapping:
 
@@ -61,38 +74,38 @@ catkin_make
 
     b/ ros:
 
-    launch rplidar config file (turtle bot):
-    $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
-    $ roslaunch turtlebot_le2i rplidar_minimal.launch
+        - $ launch rplidar config file (turtle bot):
+        - $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
+        - $ roslaunch turtlebot_le2i rplidar_minimal.launch
     
-    launch gmapping config file (workstation):
-    $ roslaunch rbx1_nav gmapping_demo.launch   (
-    $ rosrun rviz rviz -d `rospack find rbx1_nav`/gmapping.rviz
+        launch gmapping config file (workstation):
+        - $ roslaunch rbx1_nav gmapping_demo.launch   (
+        - $ rosrun rviz rviz -d `rospack find rbx1_nav`/gmapping.rviz
 
-    joystick:
-    $ roslaunch rbx1_nav joystick_teleop.launch
-    
-    record data to bag file (workstation):
-    $ roscd rbx1_nav/bag_files
-    $ rosbag record -O my_scan_data /scan /tf
+        joystick:
+        - $ roslaunch rbx1_nav joystick_teleop.launch
+        
+        record data to bag file (workstation):
+        - $ roscd rbx1_nav/bag_files
+        - $ rosbag record -O my_scan_data /scan /tf
 
-    save the map (workstation):
-    $ roscd rbx1_nav/maps
-    $ rosrun map_server map_saver -f my_map
+        save the map (workstation):
+        - $ roscd rbx1_nav/maps
+        - $ rosrun map_server map_saver -f my_map
 
-    view the map (workstation):
-    $ roscd rbx1_nav/maps
-    $ eog my_map.pgm
+        view the map (workstation):
+        - $ roscd rbx1_nav/maps
+        - $ eog my_map.pgm
 
 9/navigation:
     
-    launch config file (turtle bot)
-    $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
+        launch config file (turtle bot)
+        - $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
     
-    launch amcl with map file (workstation)
-    $ roslaunch rbx1_nav tb_demo_amcl.launch map:=my_map.yaml
+        launch amcl with map file (workstation)
+        - $ roslaunch rbx1_nav tb_demo_amcl.launch map:=my_map.yaml
 
-    
-    $ rosrun rviz rviz -d `rospack find rbx1_nav`/nav_test.rviz
+        open rviz with the saved map
+        - $ rosrun rviz rviz -d `rospack find rbx1_nav`/nav_test.rviz
     
 
