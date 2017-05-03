@@ -8,4 +8,4 @@ chmod:
 sudo chmod a+rw /dev/ttyUSB
 
 update:
-sudo apt-get install [soft_name] 
+
