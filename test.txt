@@ -58,7 +58,7 @@
         - use dynamixel set id for each servo
 
     c/ ros:
-        - $ sudo apt-get install ros-hydro-arbotix                        (download package)
+        - $ sudo apt-get install ros-indigo-arbotix                        (download package)
         - $ sudo chmod 777 /dev/ttyUSB0                                   (grant permission for ttyUSB0)
         - $ arbotix_terminal                                              (open arbotix terminal)
         - $ ls                                                            (list servo ids)
@@ -75,7 +75,6 @@
     b/ ros:
 
         - $ launch rplidar config file (turtle bot):
-        - $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
         - $ roslaunch turtlebot_le2i rplidar_minimal.launch
     
         launch gmapping config file (workstation):
@@ -100,7 +99,7 @@
 9/navigation:
     
         launch config file (turtle bot)
-        - $ roslaunch rbx1_bringup turtlebot_minimal_create.launch
+        - $ roslaunch turtlebot_le2i rplidar_minimal.launch
     
         launch amcl with map file (workstation)
         - $ roslaunch rbx1_nav tb_demo_amcl.launch map:=my_map.yaml
