@@ -1,1 +1,16 @@
-testing
+file transfer:
+rsync -rPz [src_path] [remote_address]:[destin_path]
+
+ssh:
+ssh [remote_address]
+
+chmod:
+sudo chmod a+rw /dev/ttyUSB0
+
+apt update:
+sudo apt-get install [software_name]
+
+package_create:
+catkin_make
+
+
