@@ -26,8 +26,8 @@
 
     $ sudo apt-get install ros-indigo-joy                   (download joystick package)
     $ ls /dev/input/                                        (list all the input)
-    $ sudo jstest /dev/input/jsX                            (test joystick)
-    $ ls -l /dev/input/jsX                                  (check permission)
+    $ sudo jstest /dev/input/js0                            (test joystick)
+    $ ls -l /dev/input/js0                                  (check permission)
     $ sudo chmod a+rw /dev/input/jsX                        (grant permission)
     $ roslaunch turtlebot_teleop logitech.launch --screen   (launch joystick config)
     
@@ -99,7 +99,7 @@
 9/navigation:
     
         launch config file (turtle bot)
-        - $ roslaunch turtlebot_le2i rplidar_minimal.launch
+        - $ roslaunch turtlebot_le2i remap_rplidar_minimal.launch
     
         launch amcl with map file (workstation)
         - $ roslaunch rbx1_nav tb_demo_amcl.launch map:=my_map.yaml
