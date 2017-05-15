@@ -1,0 +1,37 @@
+# CMake generated Testfile for 
+# Source directory: /home/turtlebot/ros/indigo/catkin_ws/src
+# Build directory: /home/turtlebot/ros/indigo/catkin_ws/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+SUBDIRS(gtest)
+SUBDIRS(arbotix_ros/arbotix)
+SUBDIRS(arbotix_ros/arbotix_controllers)
+SUBDIRS(arbotix_ros/arbotix_firmware)
+SUBDIRS(arbotix_ros/arbotix_python)
+SUBDIRS(arbotix_ros/arbotix_sensors)
+SUBDIRS(dynamixel_motor/dynamixel_driver)
+SUBDIRS(dynamixel_motor/dynamixel_motor)
+SUBDIRS(dynamixel_motor/dynamixel_tutorials)
+SUBDIRS(dynamixel_motor/dynamixel_controllers)
+SUBDIRS(rbx1/rbx1)
+SUBDIRS(arbotix_ros/arbotix_msgs)
+SUBDIRS(dynamixel_motor/dynamixel_msgs)
+SUBDIRS(turtlebot_arm/turtlebot_arm)
+SUBDIRS(turtlebot_arm/turtlebot_arm_bringup)
+SUBDIRS(turtlebot_arm/turtlebot_arm_description)
+SUBDIRS(turtlebot_arm/turtlebot_arm_moveit_demos)
+SUBDIRS(beginner_tutorials)
+SUBDIRS(rbx1/rbx1_bringup)
+SUBDIRS(rbx1/rbx1_vision)
+SUBDIRS(rplidar-turtlebot2/rplidar_ros)
+SUBDIRS(rbx1/rbx1_dynamixels)
+SUBDIRS(rbx1/rbx1_speech)
+SUBDIRS(rbx1/rbx1_apps)
+SUBDIRS(rbx1/rbx1_nav)
+SUBDIRS(turtlebot_arm/turtlebot_arm_kinect_calibration)
+SUBDIRS(rplidar-turtlebot2/turtlebot_le2i)
+SUBDIRS(rbx1/rbx1_description)
+SUBDIRS(turtlebot_arm/turtlebot_arm_ikfast_plugin)
+SUBDIRS(turtlebot_arm/turtlebot_arm_block_manipulation)
+SUBDIRS(turtlebot_arm/turtlebot_arm_moveit_config)
