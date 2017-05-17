@@ -56,8 +56,8 @@ class NavTest():
         # that was used to launch RViz.
         locations = dict()
         
-        locations['pos1'] = Pose(Point(-2,386, 0,854, 0,000), Quaternion(0,000, 0,000, 0,968, 0,249))
-        locations['pos2'] = Pose(Point(1,796, -0,004, 0,000), Quaternion(0,000, 0,000, 0,973, 0,232))
+        locations['pos1'] = Pose(Point(-2.386, 0.854, 0.000), Quaternion(0.000, 0.000, 0.968, 0.249))
+        locations['pos2'] = Pose(Point(1.796, -0.004, 0.000), Quaternion(0.000, 0.000, 0.973, 0.232))
 
         """locations['hall_foyer'] = Pose(Point(0.643, 4.720, 0.000), Quaternion(0.000, 0.000, 0.223, 0.975))
         locations['hall_kitchen'] = Pose(Point(-1.994, 4.382, 0.000), Quaternion(0.000, 0.000, -0.670, 0.743))
